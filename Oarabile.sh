@@ -9,15 +9,28 @@ sleep 1
 
 if [[ systemctl is-active nginx ]]
 then
-mkdir /var/ww/html/labs
-chown $USER:root /var/www/html/labs
+sudo mkdir /var/ww/html/labs
+sudo chown $USER:root /var/www/html/labs
 
 ln -s /var/www/html/labs htmal
 
 cd html
 touch index.html
 
-echo "<html><body><h1>HELLO</h1></body></html>" >> index.html
+echo "<html>
+<body>
+<h1>hello</h1>
+<div>
+<p>In this the STUDENT INFOTMATION:</p>
+<ul>
+  <li>Initails: OM THETSWE</li>
+  <li>Name: OARABILE MACBETH THETSWE</li>
+  <li>Student No: 221673180 /li>
+  <li>Course: Electrical Engineering - Computer Systems</li>
+</ul>
+</div>
+</body>
+</html>" >> index.html
 
 else
 echo "error"
